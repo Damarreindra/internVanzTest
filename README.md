@@ -1,70 +1,165 @@
-# Getting Started with Create React App
+#🕔 Junior Fullstack - Technical Test
+### Ketentuan
+  Buatlah fungsi menggunakan bahasa pemrograman dan framework apapun untuk menjawab soal-soal di bawah ini. Kemudian, temukan jawabannya.
+  Jika diperlukan, buat 1 repository di github atau gitlab untuk submit source code (berikan akses ke email aditia.prasetio@qbit.co.id agar bisa mengakses repository'nya).
+Questions
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Case 1 (Soal No.1-4)
+Andi menjual beraneka ragam buah. Diketahui catatan buah yang dimiliki Andi saat ini adalah sebagai berikut.
+ ![image](https://user-images.githubusercontent.com/80618060/229696702-2548ce46-c862-425f-add1-3abcf8610443.png)
+![image](https://user-images.githubusercontent.com/80618060/229696722-4b4f4ffe-3b67-46a8-9a0e-38ab929f5662.png)
 
-## Available Scripts
+ 
+1.	Buah apa saja yang dimiliki Andi? (fruitName)
 
-In the project directory, you can run:
+     function namaBuah(buah){
+     
+        return console.log("Buah yang dimiliki andi ada "+ buah.map((e)=>e.fruitName))
+        
+    }
 
-### `npm start`
+    namaBuah(fruits)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2.	Andi memisahkan buahnya menjadi beberapa wadah berdasarkan tipe buah (fruitType). Berapa jumlah wadah yang dibutuhkan?  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+     function jenisBuah(buah){
+     
+        return console.log("Andi membutuhkan " + [... new Set(buah.map((e)=>e.fruitType))].length + " wadah")
+        
+    }
 
-### `npm test`
+    jenisBuah(fruits)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Dan ada buah apa saja di masing-masing wadah?
+Isi wadah Buah Lokal : 
 
-### `npm run build`
+    function jenisBuah(buah){
+    
+        return console.log("Andi membutuhkan " + [... new Set(buah.map((e)=>e.fruitType))].length + " wadah")
+        
+    }
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    jenisBuah(fruits)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ 
+Wadah Buah Import : 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    function buahImport(buah){
+    
+        return console.log(buah.filter((e)=>e.fruitType != "LOCAL").map((e)=>e.fruitName))
+        
+    }
 
-### `npm run eject`
+    buahImport(fruits)
+ 
+ 
+3.	Berapa total stock buah yang ada di masing-masing wadah?
+ Isi Wadah buah import : 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+     function totalBuahImport(buah){
+     
+       let total = 0
+       let numbers = buah.filter((e)=>e.fruitType === "IMPORT").map((e)=>e.stock)
+       for (let i = 0; i < numbers.length; i++){
+           total += numbers[i]
+       }
+       return console.log(total)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    }
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    totalBuahImport(fruits)
+   
+  Isi Wadah buah import : 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+     function totalBuahLocal(buah){
+       let total = 0
+       let numbers = buah.filter((e)=>e.fruitType != "IMPORT").map((e)=>e.stock)
+       for (let i = 0; i < numbers.length; i++){
+           total += numbers[i]
+       }
+       return console.log(total)
 
-## Learn More
+    }
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    totalBuahLocal(fruits) 
+  
+ 
+4.	Apakah ada komentar terkait kasus di atas? 
+Tidak ada.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Case 2 (Soal No.5)
+Diketahui data berikut ini. 
+ 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+const fruits = [
+{
+    fruitId: 1,
+    fruitName: 'Apel',
+    fruitType: 'IMPORT',
+    stock: 10
+},
+{
+    fruitId: 2,
+    fruitName: 'Kurma',
+    fruitType: 'IMPORT',
+    stock: 20
+},
+{
+fruitId: 3,
+fruitName: 'apel',
+fruitType: 'IMPORT',
+stock: 50
+},
+{
+    fruitId: 4,
+    fruitName: 'Manggis',
+    fruitType: 'LOCAL',
+    stock: 100
+},
+{
+    fruitId: 5,
+    fruitName: 'Jeruk Bali',
+    fruitType: 'LOCAL',
+    stock: 10
+},
+{
+    fruitId: 5,
+    fruitName: 'KURMA',
+    fruitType: 'IMPORT',
+    stock: 20
+},
+{
+    fruitId: 5,
+    fruitName: 'Salak',
+    fruitType: 'LOCAL',
+    stock: 150
+}
+]
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+function buahImport(buah){
+    let total = 0
+    let numbers = buah.map((e)=>e.stock)
+     for(let i = 0; i < numbers.length; i++){
+        total+=numbers[i]
+     }
+     return console.log(total)	
+     
+ }
+buahImport(fruits)
 
-### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+ 
+5.	Buatlah fungsi untuk menghitung total komentar yang ada, termasuk semua balasan komentar. Berdasarkan data di atas, total komentar adalah 7 komentar.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Case 3 
+6.	Buatlah minimal 1 halaman untuk memperkenalkan sebuah UMKM. Desain bebas. 
+Buatlah semenarik mungkin. Boleh dibuat sebagai website ataupun mobile app 
+(bebas pilih). Jika diperlukan, diperbolehkan untuk membuat backend sederhana.
+ 
