@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { Environment, Float, Scroll, ScrollControls, Sparkles } from "@react-three/drei";
+import { Col, Container, Row } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Butterfly } from "./models/Butterfly";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Detail from "./pages/Detail";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+    <Router>
+      <Routes>
+
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/project/:id' element={<Detail/>}/>
+      </Routes>
+    </Router>
+  
   );
 }
 

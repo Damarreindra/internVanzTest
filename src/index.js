@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import logo from './R.png';
+import { Canvas } from '@react-three/fiber';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+    </header>
+    <Canvas>
     <App />
+    </Canvas>
   </React.StrictMode>
 );
 
