@@ -31,6 +31,7 @@ Andi menjual beraneka ragam buah. Diketahui catatan buah yang dimiliki Andi saat
     jenisBuah(fruits)
 
 Dan ada buah apa saja di masing-masing wadah?
+
 Isi wadah Buah Lokal : 
 
     function jenisBuah(buah){
@@ -54,6 +55,7 @@ Wadah Buah Import :
  
  
 3.	Berapa total stock buah yang ada di masing-masing wadah?
+
  Isi Wadah buah import : 
 
      function totalBuahImport(buah){
@@ -85,76 +87,12 @@ Wadah Buah Import :
   
  
 4.	Apakah ada komentar terkait kasus di atas? 
+
 Tidak ada.
 
 
 ## Case 2 (Soal No.5)
 Diketahui data berikut ini. 
- 
-
-
-const fruits = [
-{
-    fruitId: 1,
-    fruitName: 'Apel',
-    fruitType: 'IMPORT',
-    stock: 10
-},
-{
-    fruitId: 2,
-    fruitName: 'Kurma',
-    fruitType: 'IMPORT',
-    stock: 20
-},
-{
-fruitId: 3,
-fruitName: 'apel',
-fruitType: 'IMPORT',
-stock: 50
-},
-{
-    fruitId: 4,
-    fruitName: 'Manggis',
-    fruitType: 'LOCAL',
-    stock: 100
-},
-{
-    fruitId: 5,
-    fruitName: 'Jeruk Bali',
-    fruitType: 'LOCAL',
-    stock: 10
-},
-{
-    fruitId: 5,
-    fruitName: 'KURMA',
-    fruitType: 'IMPORT',
-    stock: 20
-},
-{
-    fruitId: 5,
-    fruitName: 'Salak',
-    fruitType: 'LOCAL',
-    stock: 150
-}
-]
-
-
-
-function buahImport(buah){
-    let total = 0
-    let numbers = buah.map((e)=>e.stock)
-     for(let i = 0; i < numbers.length; i++){
-        total+=numbers[i]
-     }
-     return console.log(total)	
-     
- }
-buahImport(fruits)
-
-
-
-
-
  
 5.	Buatlah fungsi untuk menghitung total komentar yang ada, termasuk semua balasan komentar. Berdasarkan data di atas, total komentar adalah 7 komentar.
 
