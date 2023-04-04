@@ -96,16 +96,16 @@ Diketahui data berikut ini.
  
 5.	Buatlah fungsi untuk menghitung total komentar yang ada, termasuk semua balasan komentar. Berdasarkan data di atas, total komentar adalah 7 komentar.
 
-    function countCommentIds(comments) {
-      let totalCommentIds = 0;
-      for (let comment of comments) {
-        totalCommentIds++;
-        if (comment.replies) {
-          totalCommentIds += countCommentIds(comment.replies);
+        function countCommentIds(comments) {
+          let totalCommentIds = 0;
+          for (let comment of comments) {
+            totalCommentIds++;
+            if (comment.replies) {
+              totalCommentIds += countCommentIds(comment.replies);
+            }
+          }
+          return totalCommentIds;
         }
-      }
-      return totalCommentIds;
-    }
 
 console.log(countCommentIds(comments)); // Output: 7
 
