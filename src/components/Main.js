@@ -8,10 +8,10 @@ import {
   ScrollControls,
   Sparkles,
 } from "@react-three/drei";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Butterfly } from "../models/Butterfly";
-import { BrowserRouter, Link, Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import img1 from './straw.jpg'
 import img2 from './tooth.png'
 import img3 from './eco.jpg'
@@ -106,8 +106,8 @@ navigation(`/project/${id}`)
                 padding: "0 30px",
               }}
             >
-              <Col xs={6}>
-                <div>
+              <Col xs={8}>
+                <div className="">
                   <h1 style={{ marginBottom: "0px" }}>
                     <span id="span-blue">R</span>ivule<span id="span-blue">t</span>
                   </h1>
@@ -124,7 +124,7 @@ navigation(`/project/${id}`)
                 top: "100vh",
               }}
             >
-              <Col xs={6}>
+              <Col md={8} xs={12}>
                 <div>
                   <h2 style={{ marginBottom: "0px" }}>
                    We create product with love touch to environment
@@ -142,14 +142,14 @@ navigation(`/project/${id}`)
                 top: "200vh",
               }}
             >
-              <Col xs={6}>
+              <Col md={8} xs={12}>
                 <div>
                   <h2 style={{ marginBottom: "0px" }}>About Us</h2>
                   <p>
                   We create an eco-friendly product would be made from sustainable materials and produced using environmentally responsible practices. This could include using organic or recycled materials, reducing water usage, minimizing waste, and avoiding the use of harmful chemicals.
                   </p>
                   
-                   <Button onClick={()=>handlePage("about")} variant="outline-light">Read More</Button>
+                  
   
                   
                 </div>
@@ -166,7 +166,7 @@ navigation(`/project/${id}`)
                 top: "300vh",
               }}
             >
-              <Col xs={6}>
+              <Col md={6} xs={12}>
                 <div>
                   <h2 style={{ marginBottom: "0px" }}>Products</h2>
                   
@@ -193,11 +193,10 @@ navigation(`/project/${id}`)
                 width: "100%",
                 height: "100vh",
                 padding: "0 30px",
-                
-                top: "500vh",
+                top: "470vh",
               }}
             >
-              <Col xs={6}>
+              <Col md={6} xs={12}>
                 <div>
                   <h2 style={{ marginBottom: "0px" }}>Get in Touch</h2>
                   <p>We really happy if you want get to know more about us. Whether you have a question or just want to say hi, Our team try my best to get back to you!</p>
