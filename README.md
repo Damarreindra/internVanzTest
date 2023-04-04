@@ -106,8 +106,10 @@ Diketahui data berikut ini.
           }
           return totalCommentIds;
         }
+        
+        console.log(countCommentIds(comments))
 
-console.log(countCommentIds(comments)); // Output: 7
+
 
 ### Case 3 
 6.	Buatlah minimal 1 halaman untuk memperkenalkan sebuah UMKM. Desain bebas. 
