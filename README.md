@@ -96,6 +96,19 @@ Diketahui data berikut ini.
  
 5.	Buatlah fungsi untuk menghitung total komentar yang ada, termasuk semua balasan komentar. Berdasarkan data di atas, total komentar adalah 7 komentar.
 
+    function countCommentIds(comments) {
+      let totalCommentIds = 0;
+      for (let comment of comments) {
+        totalCommentIds++;
+        if (comment.replies) {
+          totalCommentIds += countCommentIds(comment.replies);
+        }
+      }
+      return totalCommentIds;
+    }
+
+console.log(countCommentIds(comments)); // Output: 7
+
 ### Case 3 
 6.	Buatlah minimal 1 halaman untuk memperkenalkan sebuah UMKM. Desain bebas. 
 Buatlah semenarik mungkin. Boleh dibuat sebagai website ataupun mobile app 
